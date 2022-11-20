@@ -1,0 +1,60 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<main class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <!--Adding form-->
+            <br>
+            <br>
+            <div class="jumbotron">
+                <h1 class="display-4">Add a survey</h1>
+            </div>
+            <br>
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="userIdTextField">User Id: </label>
+                    <input type="text" class="form-control" 
+                    id="userIdTextField" 
+                    placeholder="Enter the User Id"
+                    name="userId"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="surveyIdTextField">Survey Id: </label>
+                    <input type="text" class="form-control" 
+                    id="surveyIdTextField" 
+                    placeholder="Enter the Survey Id"
+                    name="surveyId"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="titleTextField">Title: </label>
+                    <input type="text" class="form-control" 
+                    id="titleTextField" 
+                    placeholder="Enter the Title"
+                    name="title"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="descriptionTextField">Description: </label>
+                    <input type="text" class="form-control" 
+                    id="descriptionTextField" 
+                    placeholder="Enter the Description"
+                    name="description"
+                    required>
+                </div>
+                <br>
+                <!--Adding buttons to perform submit, cancel and delete actions-->
+                <button class="btn btn-success"><i class="fas fa-edit"></i> Submit</button>&nbsp;&nbsp;
+                <a href="/survey/surveyList" class="btn btn-warning"><i class="fa fa-times" aria-hidden="true"></i> Cancel</a>&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/surveyQuestions" class="btn btn-success"> Create questions</a>                 
+            </form>
+        </div>
+    </div>
+</main>
+
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>

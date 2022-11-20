@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h2 class="h2">Survey List</h2>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">surveyId</th>
+          <th scope="col">title</th>
+          <th scope="col">userId</th>
+          <th scope="col">Description</th>
+          <th class="text-center" scope="col" *ngIf='this.authService.authenticated'>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let survey of Survey; let i = index">
+          <th scope="row">{{survey._id}}</th>
+          <td>{{survey.title}}</td>
+          <td>{{survey.userId}}</td>
+          <td>{{survey.description}}</td>
+          <td class="text-center" *ngIf='this.authService.authenticated'>
+            <a class="btn btn-sm btn-primary mx-3" routerLink="/survey-edit/{{survey._id}}">Edit</a>
+            <button class="btn btn-sm btn-danger" (click)="deleteSurvey(survey._id, i)">Delete</button>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

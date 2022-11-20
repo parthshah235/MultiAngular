@@ -1,0 +1,70 @@
+<%- include navbar.ejs %>
+
+<head>
+    <title>
+      <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/Content/style.css' />
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/@fortawesome/fontawesome-free/css/all.min.css">
+  </head>
+  <script src="/public/Scripts/script.js"></script>
+  <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/jquery/dist/jquery.min.js"></script>
+
+  <br>
+  <br>
+
+<main class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <!--Adding form-->
+            <br>
+            <br>
+            <div class="jumbotron">
+                <h1 class="display-4">Create questions</h1>
+            </div>
+            <br>
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="question1TextField">Question 1: </label>
+                    <input type="text" class="form-control" 
+                    id="question1TextField" 
+                    placeholder="Enter the Question 1"
+                    name="question1"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="question2TextField">Question 2: </label>
+                    <input type="text" class="form-control" 
+                    id="question2TextField" 
+                    placeholder="Enter the Question 2"
+                    name="question2"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="question3TextField">Question 3: </label>
+                    <input type="text" class="form-control" 
+                    id="question3TextField" 
+                    placeholder="Enter the Question 3"
+                    name="question3"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="question4TextField">Question 4: </label>
+                    <input type="text" class="form-control" 
+                    id="question4TextField" 
+                    placeholder="Enter the Question 4"
+                    name="question4"
+                    required>
+                </div>
+                <br>
+                <!--Adding buttons to perform submit, cancel and delete actions-->
+                <button class="btn btn-success"><i class="fas fa-edit"></i> Submit</button>&nbsp;&nbsp;
+                <a href="/survey/surveyList" class="btn btn-warning"><i class="fa fa-times" aria-hidden="true"></i> Cancel</a>
+                   
+            </form>
+        </div>
+    </div>
+</main>

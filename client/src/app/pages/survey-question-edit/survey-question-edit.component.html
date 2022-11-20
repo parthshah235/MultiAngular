@@ -1,0 +1,44 @@
+<main class="container">
+  <div class="row">
+    <div class="offset-md-3 col-md-6">
+      <!--Adding form-->
+      <br>
+      <br>
+      <div class="jumbotron">
+        <h1 class="display-6">Survey Question Update</h1>
+      </div>
+      <br>
+      <form class="form" [formGroup]="surveyQuestionUpdateForm" (ngSubmit)="updateSurveyQuestion()">
+        <div class="form-group">
+          <label>Question 1: </label>
+          <input type="text" class="form-control" placeholder="Enter the Question 1" formControlName="question1"
+            required>
+        </div>
+        <div class="form-group">
+          <label>Question 2: </label>
+          <input type="text" class="form-control" placeholder="Enter the Question 2" formControlName="question2"
+            required>
+        </div>
+        <div class="form-group">
+          <label>Question 3: </label>
+          <input type="text" class="form-control" placeholder="Enter the Question 3" formControlName="question3"
+            required>
+        </div>
+        <div class="form-group">
+          <label>Question 4: </label>
+          <input type="text" class="form-control" placeholder="Enter the Question 4" formControlName="question4"
+            required>
+        </div>
+        <div class="form-group">
+          <label>Question 5: </label>
+          <input type="text" class="form-control" placeholder="Enter the Question 4" formControlName="question5"
+            required>
+        </div>
+        <br>
+        <!--Adding buttons to perform submit, cancel and delete actions-->
+        <button class="btn btn-success mx-3" type="submit"><i class="fas fa-edit"></i> Update</button>
+        <a href="/survey-question" class="btn btn-warning"><i class="fa fa-times" aria-hidden="true"></i> Cancel</a>
+      </form>
+    </div>
+  </div>
+</main>

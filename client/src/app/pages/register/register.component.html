@@ -1,0 +1,53 @@
+<main class="container">
+  <!--Message area-->
+  <div class="alert alert-danger mt-2 p-2 text-center" *ngIf='errorMessage != null'>
+    {{ errorMessage }}
+  </div>
+  <div class="alert alert-success mt-2 p-2 text-center" *ngIf='successMessage != null'>
+    {{ successMessage }}
+  </div>
+
+  <div class="row">
+    <div class="offset-md-4 col-md-4 mt-5">
+      <h1 *ngIf="editing; else loggedOut">
+        Update User Profile
+      </h1>
+
+      <ng-template #loggedOut>
+        <h1>Please Register</h1>
+      </ng-template>
+
+      <form novalidate #form='ngForm' (ngSubmit)='save(form)' method="POST" class="row g-3" autocomplete="off">
+        <fieldset class="col-md-12">
+          <label for="username" class="form-label">User Name:</label>
+          <input [readonly]="editing" type="text" class="form-control" name="username" id="username" placeholder="Enter username" required autofocus [(ngModel)]='user.username'>
+          <input type="hidden" name="isAdmin" id="isAdmin" [(ngModel)]='user.isAdmin'>
+        </fieldset>
+
+        <fieldset class="col-md-12" *ngIf="!editing">
+          <label for="password" class="form-label">Password:</label>
+          <input type="password" class="form-control" name="password" id="password" placeholder="Enter password" required [(ngModel)]='user.password'>
+        </fieldset>
+
+        <fieldset class="col-md-12">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" required [(ngModel)]='user.email'>
+        </fieldset>
+
+        <fieldset class="col-md-12">
+          <label for="displayName" class="form-label">Display Name:</label>
+          <input type="text" class="form-control" name="displayName" id="displayName" placeholder="Enter displayName" required [(ngModel)]='user.displayName'>
+        </fieldset>
+
+        <fieldset class="form-group float-end">
+          <button type='submit' class="btn btn-primary m-1" [class.btn-warning]='editing'>
+            <i class="{{editing ? 'fas fa-save' : 'fas fa-plus-circle' }}"></i> {{ editing ? "Update" : "Register" }}
+          </button>
+          <a href="{{editing ? '/home' : '/login' }}" class="btn btn-secondary m-1"><i class="fas fa-undo"></i> Cancel</a>
+        </fieldset>
+
+
+      </form>
+    </div>
+  </div>
+</main>

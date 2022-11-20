@@ -1,0 +1,51 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<main class="container">
+  <div class="row">
+    <div class="offset-md-1 col-md-11">
+      <div class="jumbotron">
+        <br>
+        <br>
+        <a href="/survey/add" class="btn btn-warning btn-sm"> Create a Survey</a>
+        <br>
+        <br>
+        <br>
+      <table class="table table-hover" >
+        <thead class="bg-warning">
+          <tr>
+              <th scope="col">User Id</th>
+              <th scope="col">Survey Id</th>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody class="table-warning">
+          <!--Display values obtained from database-->
+          <%for(let count = 0; count < Survey.length ; count++) { %>
+            <tr>
+                <td scope="col"><%= Survey[count].userId%></td>
+                <td scope="col"><%= Survey[count].surveyId%></td>
+                <td scope="col"><%= Survey[count].title%></td>
+                <td scope="col"><%= Survey[count].description%></td>
+                <td scope="col">
+                  <a href="/survey/edit/<%= Survey[count]._id%>" class="btn btn-warning btn-sm">
+                    <i class="fas fa-pen-alt"></i> Edit</a>
+                </td>
+                <td scope="col">
+                  <a href="/survey/delete/<%= Survey[count]._id%>" class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash-alt"></i> Delete</a>
+                </td>
+            </tr>
+          <% } %>
+        </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+</main>
+
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>

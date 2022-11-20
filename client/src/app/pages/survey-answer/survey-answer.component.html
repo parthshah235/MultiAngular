@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h2 class="h2">Take Survey</h2>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Survey Id</th>
+          <th scope="col">Question 1</th>
+          <th scope="col">Question 2</th>
+          <th scope="col">Question 3</th>
+          <th scope="col">Question 4</th>
+          <th scope="col">Question 5</th>
+          <th class="text-center" scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let survey of SurveyQuestion; let i = index">
+          <th scope="row">{{survey.surveyId}}</th>
+          <td>{{survey.question1}}</td>
+          <td>{{survey.question2}}</td>
+          <td>{{survey.question3}}</td>
+          <td>{{survey.question4}}</td>
+          <td>{{survey.question4}}</td>
+          <td class="text-center">
+            <a class="btn btn-sm btn-primary mx-3" routerLink="/takesurvey/{{survey._id}}">Take Survey</a>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

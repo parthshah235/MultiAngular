@@ -1,0 +1,44 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-12 my-5">
+            <table class="table table-hover">
+                <thead class="bg-warning">
+                    <tr>
+                        <th scope="col">Question 1</th>
+                        <th scope="col">Question 2</th>
+                        <th scope="col">Question 3</th>
+                        <th scope="col">Question 4</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody class="table-warning">
+                    <!--Display values obtained from database-->
+                    <%for(let count = 0; count < Survey.length ; count++) { %>
+                    <tr>
+                        <td scope="col"><%= Survey[count].question1 %></td>
+                        <td scope="col"><%= Survey[count].question2 %></td>
+                        <td scope="col"><%= Survey[count].question3 %></td>
+                        <td scope="col"><%= Survey[count].question4 %></td>
+                        <td scope="col">
+                            <a href="/surveyQuestions/edit/<%= Survey[count]._id%>" class="btn btn-warning btn-sm">
+                                <i class="fas fa-pen-alt"></i> Edit</a>
+                        </td>
+                        <td scope="col">
+                            <a href="#" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash-alt"></i> Delete</a>
+                        </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %> 
+
